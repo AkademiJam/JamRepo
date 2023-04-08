@@ -1,24 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FollowState_script : StateMachineBehaviour
 {
     Transform player;
-    float attack_range = 5f;
+    float attack_range = 4f;
+    NavMeshAgent agent;
+
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        agent = animator.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        agent.speed = 3.5f;
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         float distance = Vector3.Distance(player.position, animator.transform.position);
+        animator.transform.LookAt(player);
         if (distance < attack_range)
         {
             animator.SetBool("isAttacking", true);
+            wait_();
+            agent.SetDestination(player.position);
         }
         
     }
@@ -26,7 +35,7 @@ public class FollowState_script : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        agent.SetDestination(animator.transform.position);
     }
 
     //OnStateMove is called right after Animator.OnAnimatorMove()
@@ -40,4 +49,10 @@ public class FollowState_script : StateMachineBehaviour
     {
         // Implement code that sets up animation IK (inverse kinematics)
     }
-}
+
+    static IEnumerator wait_()
+    {
+        Debug.Log("waiting");
+        yield return new WaitForSeconds(0.5f);
+    }
+}   
