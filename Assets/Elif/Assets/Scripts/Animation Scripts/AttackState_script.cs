@@ -20,14 +20,14 @@ public class AttackState_script : StateMachineBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = animator.GetComponent<NavMeshAgent>();
-        agent.speed = 3.5f;
+        agent.speed = 30f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateinfo, int layerindex)
     {
-        animator.transform.LookAt(player);
         float distance = Vector3.Distance(player.position, animator.transform.position);
+        animator.transform.LookAt(player);
         if (distance > attack_range)
         {
             animator.SetBool("isAttacking", false);

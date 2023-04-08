@@ -15,7 +15,7 @@ public class FollowState_script : StateMachineBehaviour
     {
         agent = animator.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        agent.speed = 3.5f;
+        agent.speed = 30f;
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -26,7 +26,6 @@ public class FollowState_script : StateMachineBehaviour
         if (distance < attack_range)
         {
             animator.SetBool("isAttacking", true);
-            wait_();
             agent.SetDestination(player.position);
         }
         
@@ -50,9 +49,4 @@ public class FollowState_script : StateMachineBehaviour
         // Implement code that sets up animation IK (inverse kinematics)
     }
 
-    static IEnumerator wait_()
-    {
-        Debug.Log("waiting");
-        yield return new WaitForSeconds(0.5f);
-    }
 }   

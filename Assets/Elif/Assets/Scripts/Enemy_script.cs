@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy_script : MonoBehaviour
 {
     [SerializeField] private int damage = 5;
-    [SerializeField] private float speed = 10f;
-    public float enemy_hp = 30f;
+    [SerializeField] private float speed = 15f;
+    public int enemy_hp = 30;
 
     [SerializeField] private Enemy_data enemy;
     private GameObject player;
@@ -40,8 +40,8 @@ public class Enemy_script : MonoBehaviour
         {
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
             {
-                //Debug.Log("hp-10");
-                enemy_hp = enemy_hp - 10f;
+                //Debug.Log("enemy took damage");
+                TakeDamage(10);
             }
         }
         
@@ -52,4 +52,24 @@ public class Enemy_script : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
+    public void TakeDamage(int damage_amount)
+    {
+        enemy_hp -= damage_amount;
+        if (enemy_hp <= 0 )
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        animator.SetBool("isDead", true);
+        wait_();
+        Destroy(gameObject);
+    }
+    static IEnumerator wait_()
+    {
+        Debug.Log("waiting");
+        yield return new WaitForSeconds(2f);
+    }
 }
