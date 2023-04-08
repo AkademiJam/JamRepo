@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class invisible_enemy_collider : MonoBehaviour
 {   
-    private Animator animator;
-    private void Awake()
-    {
-        animator = GetComponent<Animator>(); 
-    }
+    public Animator animator;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

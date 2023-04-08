@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class AttackState_script : StateMachineBehaviour
 {
+    Transform player;
+    float attack_range = 5f;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateinfo, int layerindex)
     {
-
+        float distance = Vector3.Distance(player.position, animator.transform.position);
+        if (distance > attack_range)
+        {
+            animator.SetBool("isAttacking", false);
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

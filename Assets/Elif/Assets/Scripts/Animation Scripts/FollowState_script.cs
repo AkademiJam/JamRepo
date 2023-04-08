@@ -20,6 +20,7 @@ public class FollowState_script : StateMachineBehaviour
         {
             animator.SetBool("isAttacking", true);
         }
+        
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
