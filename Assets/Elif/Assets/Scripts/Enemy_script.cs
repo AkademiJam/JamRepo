@@ -25,13 +25,12 @@ public class Enemy_script : MonoBehaviour
         animator = GetComponent<Animator>();
         current_enemy_hp = enemy.hp;
         health_bar.SetMaxHealth(enemy_hp);
-        
         _audio = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        if (animator.GetBool("isFollowing")) 
+        if (animator.GetBool("isFollowing") && !animator.GetBool("isDead")) 
         {
             Follow();
         };
@@ -46,15 +45,6 @@ public class Enemy_script : MonoBehaviour
         //{
         //    enemy_scriptInstance = FindObjectOfType<Enemy_script>();
         //}
-
-        if (animator.GetBool("isHit") && isAlive)
-        {
-            if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
-            {
-                //Debug.Log("enemy took damage");
-                TakeDamage(10, ref isAlive);
-            }
-        }
 
         if (animator.GetBool("isAttacking") && !_audio.isPlaying)
         {
@@ -78,22 +68,23 @@ public class Enemy_script : MonoBehaviour
 
     public void TakeDamage(int damage_amount, ref bool isAlive)
     {
+        animator.SetBool("isHit",true);
         enemy_hp -= damage_amount;
-        health_bar.Set_health(current_enemy_hp);
-        if (enemy_hp <= 0 )
+        health_bar.Set_health(enemy_hp);
+        if (enemy_hp <= 0 && !animator.GetBool("isDead"))
         {
             animator.SetBool("isDead", true);
+            animator.SetBool("isAttacking", false);
             isAlive = false;
             _audio.volume = 0.4f;
             _audio.PlayOneShot(dying_sound);
             Invoke("Die", 3);
         }
+        
     }
 
     void Die()
     {
-        
-        Debug.Log("CALISTI");
         gameObject.SetActive(false);
     }
 }
