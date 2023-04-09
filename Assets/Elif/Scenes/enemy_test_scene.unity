@@ -295,18 +295,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1667126654, guid: 37dc3d5f4caa50648a82318fb2a62652, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1667126654, guid: 37dc3d5f4caa50648a82318fb2a62652, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1667126654, guid: 37dc3d5f4caa50648a82318fb2a62652, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2088113738, guid: 37dc3d5f4caa50648a82318fb2a62652, type: 3}
       propertyPath: cam
       value: 
@@ -770,7 +758,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003406003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.8, y: 0.93, z: 9.82}
+  m_LocalPosition: {x: -4.87, y: 0.93, z: 16.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
