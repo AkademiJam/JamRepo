@@ -13,6 +13,8 @@ public class Enemy_script : MonoBehaviour
     [SerializeField] private Enemy_data enemy;
     private GameObject player;
     private Animator animator;
+    private AudioSource _audio;
+    public AudioClip walking_sound;
 
     void Start()
     {
@@ -20,6 +22,8 @@ public class Enemy_script : MonoBehaviour
         animator = GetComponent<Animator>();
         current_enemy_hp = enemy.hp;
         health_bar.SetMaxHealth(enemy_hp);
+        
+        _audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -48,7 +52,10 @@ public class Enemy_script : MonoBehaviour
                 TakeDamage(10);
             }
         }
-        
+        if (animator.GetBool("isFollowing") && !_audio.isPlaying)
+        {
+            _audio.PlayOneShot(walking_sound);
+        }
     }
 
     private void Follow()
