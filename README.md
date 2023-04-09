@@ -1,14 +1,14 @@
-## JamRepo
+# JamRepo
 JamRepo
 
-# Player Assets
+## Player Assets
 [https://assetstore.unity.com/packages/3d/characters/humanoids/rpg-tiny-hero-duo-pbr-polyart-225148](https://assetstore.unity.com/packages/3d/characters/humanoids/rpg-tiny-hero-duo-pbr-polyart-225148)
 
-# Character Assets
+## Character Assets
 [https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/mini-legion-footman-pbr-hp-polyart-86576](https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/mini-legion-footman-pbr-hp-polyart-86576)
 [https://sketchfab.com/3d-models/low-poly-characters-pack-f1c8018af59643e0b009a6f018ed9fd9](https://sketchfab.com/3d-models/low-poly-characters-pack-f1c8018af59643e0b009a6f018ed9fd9)
 
-# Level Design Assets
+## Level Design Assets
 [https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-simple-nature-pack-162153](https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-simple-nature-pack-162153)
 [https://jaks.itch.io/lowpolyforestpack](https://jaks.itch.io/lowpolyforestpack)
 [https://assetstore.unity.com/packages/3d/environments/landscapes/simple-low-poly-nature-pack-157552](https://assetstore.unity.com/packages/3d/environments/landscapes/simple-low-poly-nature-pack-157552)
@@ -22,11 +22,11 @@ JamRepo
 [https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-woods-232818](https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-woods-232818)
 
 
-# UI
+## UI
 [https://www.kenney.nl/assets/ui-pack-rpg-expansion](https://www.kenney.nl/assets/ui-pack-rpg-expansion)
 
 
-# Sound Effects
+## Sound Effects
 [https://evilduckk.itch.io/sound-assets-for-your-adventure-game](https://evilduckk.itch.io/sound-assets-for-your-adventure-game)
 [https://www.kenney.nl/assets/rpg-audio](https://www.kenney.nl/assets/rpg-audio)
 [https://www.kenney.nl/assets/music-jingles](https://www.kenney.nl/assets/music-jingles)
