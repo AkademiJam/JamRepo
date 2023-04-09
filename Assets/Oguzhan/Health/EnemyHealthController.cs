@@ -20,8 +20,6 @@ public class EnemyHealthController : MonoBehaviour
             
             if (temp != Mathf.FloorToInt(enemyAnim.GetCurrentAnimatorStateInfo(0).normalizedTime))
             {
-                Debug.Log(enemyAnim.GetCurrentAnimatorStateInfo(0).normalizedTime);
-                Debug.Log("Calisti");
                 HealthControllerChar.charHealth -= 10;
             }
             temp = Mathf.FloorToInt(enemyAnim.GetCurrentAnimatorStateInfo(0).normalizedTime);

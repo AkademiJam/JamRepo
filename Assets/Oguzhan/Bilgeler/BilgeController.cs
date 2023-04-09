@@ -75,7 +75,6 @@ public class BilgeController : MonoBehaviour
 
     void Speak()
     {
-        Debug.Log("Fonksiyona girildi");
         switch (siraValue)
         {
             case 0:
