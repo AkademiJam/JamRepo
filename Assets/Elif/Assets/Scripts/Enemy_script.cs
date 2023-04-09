@@ -5,8 +5,10 @@ using UnityEngine;
 public class Enemy_script : MonoBehaviour
 {
     [SerializeField] private int damage = 5;
-    [SerializeField] private float speed = 15f;
+    [SerializeField] private float speed = 10f;
     public int enemy_hp = 30;
+    public int current_enemy_hp;
+    public HealthBar health_bar;
 
     [SerializeField] private Enemy_data enemy;
     private GameObject player;
@@ -16,6 +18,8 @@ public class Enemy_script : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
+        current_enemy_hp = enemy.hp;
+        health_bar.SetMaxHealth(enemy_hp);
     }
 
     void Update()
@@ -55,6 +59,7 @@ public class Enemy_script : MonoBehaviour
     public void TakeDamage(int damage_amount)
     {
         enemy_hp -= damage_amount;
+        health_bar.Set_health(current_enemy_hp);
         if (enemy_hp <= 0 )
         {
             Die();

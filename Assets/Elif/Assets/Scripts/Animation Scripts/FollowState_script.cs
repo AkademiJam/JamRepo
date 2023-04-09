@@ -23,10 +23,12 @@ public class FollowState_script : StateMachineBehaviour
     {
         float distance = Vector3.Distance(player.position, animator.transform.position);
         animator.transform.LookAt(player);
+        
         if (distance < attack_range)
         {
             animator.SetBool("isAttacking", true);
             agent.SetDestination(player.position);
+            
         }
         
     }
@@ -35,6 +37,7 @@ public class FollowState_script : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         agent.SetDestination(animator.transform.position);
+
     }
 
     //OnStateMove is called right after Animator.OnAnimatorMove()
