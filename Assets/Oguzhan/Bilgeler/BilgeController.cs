@@ -7,13 +7,14 @@ public class BilgeController : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioClip[] audioClips;
-    public string[] AtýlMetins = {"Merhaba ben Atýl","Atýl Ben Merhaba","Atýl Mesaj Balonu"};
-    public string[] BOYMetins = { "Merhaba ben BOY", "BOY Ben Merhaba", "BOY Mesaj Balonu" };
-    public string[] GunseliMetins = { "Merhaba ben Günseli", "Günseli Ben Merhaba", "Günseli Mesaj Balonu" };
-    public string[] TolgayMetins = { "Merhaba ben Tolgay", "Tolgay Ben Merhaba", "Tolgay Mesaj Balonu" };
+    public string[] AtýlMetins;
+    public string[] BOYMetins;
+    public string[] GunseliMetins;
+    public string[] TolgayMetins; 
     public int siraValue;
     public GameObject canvasMetin;
     public TextMeshProUGUI metinText;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,42 +26,48 @@ public class BilgeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            siraValue = 0;
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            siraValue = 1;
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            siraValue = 2;
-        }
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            siraValue = 3;
-        }
+
     }
     //Karaktere yaklaþtýðýnda siravalue deðeri güncelleniyor
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player" && gameObject.tag == "Atýl")
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            siraValue = 0;
+
+            if (other.gameObject.tag == "Atýl")
+            {
+                canvasMetin.SetActive(true);
+                metinText.text = "Merhaba ben Atýl sana bu yolda çok þey öðreteceðim";
+                audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
+                Invoke("offCanvasMetin", 4);
+                siraValue = 0;
+            }
+            else if (other.gameObject.tag == "BOY")
+            {
+                canvasMetin.SetActive(true);
+                metinText.text = "Merhaba ben Sonat sana bu yolda çok þey öðreteceðim";
+                audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
+                Invoke("offCanvasMetin", 4);
+                siraValue = 1;
+            }
+            else if (other.gameObject.tag == "Günseli")
+            {
+                canvasMetin.SetActive(true);
+                metinText.text = "Merhaba ben Melike sana bu yolda her konuda yardým edeceðim";
+                audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
+                Invoke("offCanvasMetin", 4);
+                siraValue = 2;
+            }
+            else if (other.gameObject.tag == "Tolgay")
+            {
+                canvasMetin.SetActive(true);
+                metinText.text = "Merhaba ben Tolgay sana bu yolda çok þey öðreteceðim";
+                audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
+                Invoke("offCanvasMetin", 4);
+                siraValue = 3;
+            }
         }
-        else if (other.gameObject.tag == "Player" && gameObject.tag == "BOY")
-        {
-            siraValue = 1;
-        }
-        else if (other.gameObject.tag == "Player" && gameObject.tag == "Günseli")
-        {
-            siraValue = 2;
-        }
-        else if (other.gameObject.tag == "Player" && gameObject.tag == "Tolgay")
-        {
-            siraValue = 3;
-        }
+
     }
 
 
@@ -76,14 +83,14 @@ public class BilgeController : MonoBehaviour
                     canvasMetin.SetActive(true);
                     int index = Random.Range(0, AtýlMetins.Length);
                     metinText.text = AtýlMetins[index];
-                    audioSource.PlayOneShot(audioClips[Random.Range(0,audioClips.Length)]);
+                    audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
                     Invoke("offCanvasMetin", 5);
                     break;
                 }
             case 1:
                 {
                     canvasMetin.SetActive(true);
-                    int index = Random.Range(0,BOYMetins.Length);
+                    int index = Random.Range(0, BOYMetins.Length);
                     metinText.text = BOYMetins[index];
                     audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
                     Invoke("offCanvasMetin", 5);
