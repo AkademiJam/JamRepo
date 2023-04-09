@@ -58069,23 +58069,33 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6067dd4ad47fd3e4697e1bad44cb470c, type: 3}
   - {fileID: 8300000, guid: 78d0354a1892d464f80e1c934afb4dcd, type: 3}
   - {fileID: 8300000, guid: 24732c0230a37484a9db5e8edefa5141, type: 3}
-  "At\u0131lMetins":
-  - "Merhaba ben At\u0131l"
-  - "At\u0131l Ben Merhaba"
-  - "At\u0131l Mesaj Balonu"
-  - "At\u0131l Mesaj Havuzu"
+  "At\xFDlMetins":
+  - "Hayallerinizi ger\xE7ekle\u015Ftirmek i\xE7in do\u011Fru se\xE7imleri yap\u0131n
+    ve cesur olun."
+  - "Ba\u015Far\u0131l\u0131 olmak i\xE7in \xF6nce kendinize inan\u0131n. Kendinize
+    g\xFCvenin ve hayallerinizi ger\xE7ekle\u015Ftirmek i\xE7in ad\u0131m at\u0131n."
+  - "Kendinizi tan\u0131y\u0131n ve g\xFC\xE7l\xFC yanlar\u0131n\u0131z\u0131 kullanarak
+    hayallerinizi ger\xE7ekle\u015Ftirin."
   BOYMetins:
-  - Merhaba ben Sonat
-  - Sonat Ben Merhaba
-  - Sonat Mesaj Balonu
+  - "Kendinizi tan\u0131y\u0131n ve g\xFC\xE7l\xFC yanlar\u0131n\u0131z\u0131 kullanarak
+    hayallerinizi ger\xE7ekle\u015Ftirin."
+  - "Sizin s\u0131n\u0131rlar\u0131n\u0131z, yaln\u0131zca sizin inand\u0131\u011F\u0131n\u0131z
+    kadar dar."
+  - "Yarat\u0131c\u0131l\u0131\u011F\u0131n\u0131z\u0131 kullan\u0131n ve farkl\u0131
+    \xE7\xF6z\xFCmler bulun."
+  - "Ba\u015Far\u0131, do\u011Fru insanlar\u0131 tan\u0131d\u0131\u011F\u0131n\u0131zda
+    ve do\u011Fru zamanda do\u011Fru ad\u0131mlar\u0131 att\u0131\u011F\u0131n\u0131zda
+    gelir."
   GunseliMetins:
-  - Merhaba ben Melike
-  - Melike Ben Merhaba
-  - Melike Mesaj Balonu
+  - "Yapabilece\u011Finizden daha b\xFCy\xFCk \u015Feyler yapmak i\xE7in kendinize
+    g\xFCvenin."
+  - "Ba\u015Far\u0131l\u0131 olmak i\xE7in \xF6nce kendinizi ke\u015Ffedin."
+  - "Siz, kendi hayat\u0131n\u0131z\u0131n y\xF6netmenisiniz."
   TolgayMetins:
-  - Merhaba ben Tolgay
-  - Tolgay Ben Merhaba
-  - Tolgay Mesaj Balonu
+  - "\xD6\u011Frenmeyi sevin ve kendinizi s\xFCrekli geli\u015Ftirin."
+  - "Ba\u015Far\u0131l\u0131 olmak i\xE7in \xF6nemli olan tek \u015Fey, ba\u015Flamakt\u0131r."
+  - "Ba\u015Far\u0131l\u0131 olmak i\xE7in her zaman haz\u0131r olmayabilirsiniz,
+    ama ba\u015Flamak i\xE7in haz\u0131r olabilirsiniz."
   siraValue: 0
   canvasMetin: {fileID: 979077675}
   metinText: {fileID: 1885273711}
