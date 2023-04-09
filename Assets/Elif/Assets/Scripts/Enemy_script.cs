@@ -15,6 +15,9 @@ public class Enemy_script : MonoBehaviour
     private Animator animator;
     private AudioSource _audio;
     public AudioClip walking_sound;
+    public AudioClip attack_audio;
+    public AudioClip dying_sound;
+    public static bool isAlive = true;
 
     void Start()
     {
@@ -44,18 +47,28 @@ public class Enemy_script : MonoBehaviour
         //    enemy_scriptInstance = FindObjectOfType<Enemy_script>();
         //}
 
-        if (animator.GetBool("isHit"))
+        if (animator.GetBool("isHit") && isAlive)
         {
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
             {
                 //Debug.Log("enemy took damage");
-                TakeDamage(10);
+                TakeDamage(10, ref isAlive);
             }
         }
-        if (animator.GetBool("isFollowing") && !_audio.isPlaying)
+
+        if (animator.GetBool("isAttacking") && !_audio.isPlaying)
         {
+            _audio.volume = 0.5f;
+            _audio.PlayOneShot(attack_audio);
+        }
+
+        if (animator.GetBool("isFollowing") && !_audio.isPlaying && isAlive)
+        {
+            _audio.volume = 0.2f;
             _audio.PlayOneShot(walking_sound);
         }
+
+
     }
 
     private void Follow()
@@ -63,25 +76,24 @@ public class Enemy_script : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
-    public void TakeDamage(int damage_amount)
+    public void TakeDamage(int damage_amount, ref bool isAlive)
     {
         enemy_hp -= damage_amount;
         health_bar.Set_health(current_enemy_hp);
         if (enemy_hp <= 0 )
         {
-            Die();
+            animator.SetBool("isDead", true);
+            isAlive = false;
+            _audio.volume = 0.4f;
+            _audio.PlayOneShot(dying_sound);
+            Invoke("Die", 3);
         }
     }
 
     void Die()
     {
-        animator.SetBool("isDead", true);
-        wait_();
-        Destroy(gameObject);
-    }
-    static IEnumerator wait_()
-    {
-        Debug.Log("waiting");
-        yield return new WaitForSeconds(2f);
+        
+        Debug.Log("CALISTI");
+        gameObject.SetActive(false);
     }
 }
