@@ -20,6 +20,8 @@
 *[https://assetstore.unity.com/packages/3d/environments/dungeons/ultimate-low-poly-dungeon-143535](https://assetstore.unity.com/packages/3d/environments/dungeons/ultimate-low-poly-dungeon-143535)
 *[https://assetstore.unity.com/packages/2d/textures-materials/water/stylize-snow-texture-153579](https://assetstore.unity.com/packages/2d/textures-materials/water/stylize-snow-texture-153579)
 *[https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-woods-232818](https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-woods-232818)
+*[https://assetstore.unity.com/packages/3d/environments/fantasy/free-slavic-medieval-environment-town-interior-and-exterior-167010](https://assetstore.unity.com/packages/3d/environments/fantasy/free-slavic-medieval-environment-town-interior-and-exterior-167010)
+*[https://assetstore.unity.com/packages/2d/textures-materials/stone/mc-dirt-stone-wall-free-sample-178284](https://assetstore.unity.com/packages/2d/textures-materials/stone/mc-dirt-stone-wall-free-sample-178284)
 
 
 ## UI
