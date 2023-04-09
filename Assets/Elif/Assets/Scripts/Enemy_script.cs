@@ -62,19 +62,13 @@ public class Enemy_script : MonoBehaviour
         health_bar.Set_health(current_enemy_hp);
         if (enemy_hp <= 0 )
         {
-            Die();
+            Invoke("Die",2);
         }
     }
 
     void Die()
     {
         animator.SetBool("isDead", true);
-        wait_();
         Destroy(gameObject);
-    }
-    static IEnumerator wait_()
-    {
-        Debug.Log("waiting");
-        yield return new WaitForSeconds(2f);
     }
 }
