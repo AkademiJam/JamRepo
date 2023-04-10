@@ -11,7 +11,7 @@ public class BilgeController : MonoBehaviour
     public string[] BOYMetins;
     public string[] GunseliMetins;
     public string[] TolgayMetins; 
-    public int siraValue;
+    public static int siraValue;
     public GameObject canvasMetin;
     public TextMeshProUGUI metinText;
 
