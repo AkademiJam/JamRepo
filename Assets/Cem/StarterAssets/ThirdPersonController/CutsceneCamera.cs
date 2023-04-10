@@ -9,7 +9,11 @@ public class CutsceneCamera : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        cutsceneCam.SetActive(true);
-        thePlayer.SetActive(false);
+        if (other.tag == "Player")
+        {
+            cutsceneCam.SetActive(true);
+            thePlayer.SetActive(false);
+        }
+        
     }
 }
