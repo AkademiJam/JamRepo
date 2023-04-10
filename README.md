@@ -1,4 +1,4 @@
-# Oyun Ismi--> Hazine
+# Oyun Ismi --> Hazine
 [](YouTube Linki)
 
 ## Player Assets
@@ -29,6 +29,5 @@
 
 
 ## Sound Effects
-- [https://evilduckk.itch.io/sound-assets-for-your-adventure-game](https://evilduckk.itch.io/sound-assets-for-your-adventure-game)
 - [https://www.kenney.nl/assets/rpg-audio](https://www.kenney.nl/assets/rpg-audio)
 - [https://www.kenney.nl/assets/music-jingles](https://www.kenney.nl/assets/music-jingles)
