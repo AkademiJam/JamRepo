@@ -1,5 +1,5 @@
 # Oyun Ismi --> Hazine
-[](YouTube Linki)
+[YouTube Linki (public)](https://www.youtube.com/watch?v=0ZjLEzfN-EE))
 
 ## Player Assets
 - [https://assetstore.unity.com/packages/3d/characters/humanoids/rpg-tiny-hero-duo-pbr-polyart-225148](https://assetstore.unity.com/packages/3d/characters/humanoids/rpg-tiny-hero-duo-pbr-polyart-225148)
